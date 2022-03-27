@@ -1,10 +1,11 @@
 
 body {
   margin: 0;
-  overflow: auto;
+overflow: auto;
+
   background: #2f294f;
   color:white;
-  height:200%;
+
 }
 
 
@@ -42,11 +43,9 @@ body {
 
 * { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
 
-html { width: 100%; height:100%; overflow:hidden; }
 
 body {
-	width: 100%;
-	height:100%;
+
 	font-family: 'Open Sans', sans-serif;
 	background: #092756;
 	background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top,  rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg,  #670d10 0%, #092756 100%);
@@ -109,15 +108,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
     padding: 0;
     box-sizing: border-box;
 }
-/* body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #050801;
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
-} */
+
 .er{
     position: relative;
     display: inline-block;
@@ -141,9 +132,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
                 0 0 200px #03e9f4;
      -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
 }
-/* .er:nth-child(1){
-    filter: hue-rotate(270deg); */
-}
+
 .er:nth-child(2){
     filter: hue-rotate(110deg);
 }
@@ -248,15 +237,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
   margin-top: 80px;
 }
 
-/* .pq{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin: -150px 0 0 -150px;
-	width:300px;
-	height:300px;
-}
-.pq h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; } */
+
 .k{
   margin-left: 0px;
   margin-top: 100px;
@@ -276,7 +257,26 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
  background-position: center;
 
 
+
 }
 .mycontent{
   padding-bottom: 50px;
+
+}
+.ending{
+  background: #2a3950;
+  overflow: hidden;
+  height: 100%;
+
+}
+#t{
+  margin-top: 100px;
+
+}
+.about{
+  padding-bottom: 50px;
+}
+
+#con{
+  padding-left: 10px;
 }

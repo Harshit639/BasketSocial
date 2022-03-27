@@ -8,3 +8,9 @@ class TestPage(TemplateView):
 
 class ThanksPage(TemplateView):
     template_name='thanks.html'
+
+class About(TemplateView):
+    template_name='about.html'
+
+class Contact(TemplateView):
+    template_name='contact.html'
