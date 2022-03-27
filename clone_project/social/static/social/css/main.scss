@@ -1,0 +1,987 @@
+//top player
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+// Variables
+$regal-blue: #034378;
+$san-juan: #2d4e68;
+$bermuda: #77d7b9;
+$white: #fff;
+$black: #000;
+$open-sans: 'Open Sans',
+sans-serif;
+// clear-fix mixin
+@mixin cf {
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+  &::after {
+    clear: both;
+  }
+}
+
+
+
+
+.row {
+  max-width: 900px;
+  margin: 50px auto 0;
+}
+
+// Base styles
+.card {
+  float: left;
+  padding: 0 1.7rem;
+  width: 50%;
+	margin-top: 20px;
+	margin-left: 180px;
+  .menu-content {
+    @include cf;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    li {
+      display: inline-block;
+    }
+    a {
+      color: $white;
+    }
+    span {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      font-size: 10px;
+      font-weight: 700;
+      font-family: 'Open Sans';
+      transform: translate(-50%, 0);
+    }
+  }
+  .wrapper {
+    background-color: $white;
+    min-height: 540px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 19px 38px rgba($black, 0.3), 0 15px 12px rgba($black, 0.2);
+    &:hover {
+      .data {
+        transform: translateY(0);
+      }
+    }
+  }
+  .data {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(calc(70px + 1em));
+    transition: transform 0.3s;
+    .content {
+      padding: 1em;
+      position: relative;
+      z-index: 1;
+    }
+  }
+  .author {
+    font-size: 12px;
+  }
+  .title {
+    margin-top: 10px;
+  }
+  .text {
+    height: 70px;
+    margin: 0;
+  }
+  input[type='checkbox'] {
+    display: none;
+  }
+  input[type='checkbox']:checked + .menu-content {
+    transform: translateY(-60px);
+  }
+}
+
+// First example styles
+.example-1 {
+  .wrapper {
+    background: url(https://www.si.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTcwMzExMzEwNTc0MTAxODM5/lebron-dunk.jpg) 20% 1% / cover no-repeat;
+  }
+  .date {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $bermuda;
+    color: $white;
+    padding: 0.8em;
+    span {
+      display: block;
+      text-align: center;
+    }
+    .day {
+      font-weight: 700;
+      font-size: 24px;
+      text-shadow: 2px 3px 2px rgba($black, 0.18);
+    }
+    .month {
+      text-transform: uppercase;
+    }
+    .month,
+    .year {
+      font-size: 12px;
+    }
+  }
+  .content {
+    background-color: $white;
+    box-shadow: 0 5px 30px 10px rgba($black, 0.3);
+  }
+  .title {
+    a {
+      color: lighten($black, 50%);
+    }
+  }
+  .menu-button {
+    position: absolute;
+    z-index: 999;
+    top: 16px;
+    right: 16px;
+    width: 25px;
+    text-align: center;
+    cursor: pointer;
+    span {
+      width: 5px;
+      height: 5px;
+      background-color: lighten($black, 50%);
+      color: lighten($black, 50%);
+      position: relative;
+      display: inline-block;
+      border-radius: 50%;
+      &::after,
+      &::before {
+        content: '';
+        display: block;
+        width: 5px;
+        height: 5px;
+        background-color: currentColor;
+        position: absolute;
+        border-radius: 50%;
+      }
+      &::before {
+        left: -10px;
+      }
+      &::after {
+        right: -10px;
+      }
+    }
+  }
+  .menu-content {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    transition: transform 0.3s;
+    transform: translateY(0);
+    li {
+      width: 33.333333%;
+      float: left;
+      background-color: $bermuda;
+      height: 60px;
+      position: relative;
+    }
+    a {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+    }
+    span {
+      top: -10px;
+    }
+  }
+}
+/*PEN STYLES*/
+
+// * {
+//   box-sizing: border-box;
+// }
+// // form
+// @font-face {
+// 	font-family: 'montserratthin';
+// 	src: url('http://www.testomic.com/public/codepen-assets/fonts/montserrat-thin-webfont.woff2') format('woff2'),
+// 		 url('http://www.testomic.com/public/codepen-assets/fonts/fonts/montserrat-thin-webfont.woff') format('woff');
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
+//
+//
+// @font-face {
+// 	font-family: 'montserratlight';
+// 	src: url('http://www.testomic.com/public/codepen-assets/fonts/montserrat-light-webfont.woff2') format('woff2'),
+// 		 url('http://www.testomic.com/public/codepen-assets/fonts/montserrat-light-webfont.woff') format('woff');
+// 	font-weight: normal;
+// 	font-style: normal;
+//
+// }
+//
+// @font-face {
+// 	font-family: 'montserratregular';
+// 	src: url('http://www.testomic.com/public/codepen-assets/fonts/montserrat-regular-webfont.woff2') format('woff2'),
+// 		 url('http://www.testomic.com/public/codepen-assets/fonts/montserrat-regular-webfont.woff') format('woff');
+// 	font-weight: normal;
+// 	font-style: normal;
+//
+// }
+//
+// $shark:	#22252C;
+// $chardonnay: #ffc98b;
+// $newYorkPink: #da7887;
+// $mulberry: #c54d74;
+//
+// body{
+// 	margin:0;
+// }
+//
+// .container{
+// 	position:absolute;
+// 	width:100%;
+// 	height:100%;
+//
+// 	background-image:url(http://www.testomic.com/public/codepen-assets/img/scene.jpg);
+// 	overflow:hidden;
+// 	background-size:cover;
+// }
+//
+// .contact-form {
+// 	z-index:999;
+// 	position:absolute;
+// 	bottom:0px;
+// 	width:100%;
+// 	height:100%;
+// 	opacity:0.92;
+// 	overflow:hidden;
+// 	transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+// }
+//
+// .form-background{
+// 	width:100%;
+// 	height:100%;
+// 	background:$shark;
+// 	-webkit-clip-path: polygon(88% calc(100% - 210px - 6%), 100% calc(100% - 190px), 100% 100%, 0 100%, 0 calc(100% - 210px));
+// 	clip-path: polygon(83% 52%, 100% 69%, 100% 100%, 0 100%, 0 66%);
+// 	transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+// }
+//
+// form {
+// 	position:absolute;
+// 	width:100%;
+// 	height:100%;
+// 	left:calc(50% - calc(56% + 150px) / 2);
+// 	bottom:100px;
+// }
+//
+// .cross {
+// 	position:absolute;
+// 	display:inline-block;
+// 	z-index:99999;
+// 	width:15px;
+// 	height:15px;
+// 	left:calc(88% - 15px);
+// 	bottom:calc(210px + 6% - 25px);
+// 	cursor:pointer;
+// 	transition: all 0.5s;
+//
+// }
+//
+// .cross:hover {
+// 	transform:rotate(90deg);
+// }
+//
+// .text-input{
+// 	position:absolute;
+// 	height:22px;
+// 	width:28%;
+// }
+//
+// .name {
+// 	bottom:40px;
+// }
+//
+// .email {
+// 	bottom:0%;
+// }
+//
+// .message {
+// 	left:calc(28% + 25px);
+// 	bottom:0%;
+// 	height:44px + 19px;
+// 	type: "text";
+// 	multiline: true;
+//
+// 	label {
+// 		vertical-align: top;
+// 	}
+//
+// }
+//
+//
+// label {
+//   position: absolute;
+//   font-size: 12px;
+// 	font-family: 'montserratlight';
+//   color: #e2e2e2;
+//   transition: all 0.5s;
+// 	width:100%;
+// 	height:100%;
+// 	bottom:-6px;
+// 	padding-left:10px;
+// 	padding-right:10px;
+// }
+//
+// input, textarea {
+//   position: absolute;
+//   background: transparent;
+// 	font-family: 'montserratlight';
+//   width: 100%;
+// 	height: 100%;
+//   font-size: 12px;
+// 	border-radius:5px;
+// 	border-width:2px;
+// 	border-color:$mulberry;
+// 	border-style: solid;
+// 	padding-left:10px;
+// 	margin-right:20px;
+// 	color:white;
+// }
+//
+// textarea {
+// 	padding-top:6px;
+// 	height:calc(100% - 5px);
+// 	resize:none;
+// }
+//
+// .active {
+//   opacity:0;
+// }
+//
+// .submit {
+// 	position: absolute;
+// 	border-radius: 5px;
+// 	color: white;
+// 	background-color: $mulberry;
+// 	transition: all 0.1s;
+// 	-webkit-transition: all 0.1s;
+// 	width:100px;
+// 	height:72px;
+// 	bottom:-8px;
+// 	left:calc(56% + 50px);
+// 	cursor:pointer;
+// 	overflow:hidden;
+// 	transition: all 0.5s;
+// }
+//
+//
+// input:focus,
+// textarea:focus{
+// 	outline: none;
+// 	border-color:white;
+// }
+//
+// .error-mark {
+// 	position: absolute;
+//   font-size: 32px;
+// 	font-family: 'montserratlight';
+//   color: red;
+// 	width:100%;
+// 	height:100%;
+// 	bottom:-2px;
+// 	right:-7px;
+// 	text-align:right;
+// 	opacity:0;
+// }
+//
+// .submit-icon {
+// 	pointer-events: none;
+// 	position:absolute;
+// 	width:44px;
+// 	bottom:20px;
+// 	left:calc(50% - 22px);
+// }
+//
+// .result-message {
+// 	position:absolute;
+// 	pointer-events: none;
+// 	width:100%;
+// 	text-align:center;
+// 	left:-100px;
+// 	bottom:26px;
+// 	font-size: 14px;
+// 	font-color: white;
+// 	font-family: 'montserratlight';
+// 	color: white;
+// }
+//
+// .result {
+// 	pointer-events: none;
+// 	position:absolute;
+// 	width:100px;
+// 	height:72px;
+// 	z-index:9999;
+// 	bottom:-8px;
+// 	left:calc(56% + 50px);
+// 	overflow:hidden;
+// }
+//
+// .horline{
+// 	position:absolute;
+// 	z-index:9999;
+// 	background-color: $mulberry;
+// 	bottom:125px;
+// 	left:calc(56% + 25px);
+// 	height:1px;
+// 	width:13%;
+// }
+//
+// .vertline{
+// 	position:absolute;
+// 	z-index:9999;
+// 	background-color: $mulberry;
+// 	bottom:calc(126px - 125px);
+// 	left:calc(56% + 250px);
+// 	height:125px;
+// 	width:1px;
+// }
+//
+//
+// /**
+// * Footer
+// */
+// footer {
+// 	position:fixed;
+// 	z-index:9999;
+// 	width:100%;
+// 	height:50px;
+// 	background-color:$shark;
+// 	bottom:0;
+// }
+//
+// .contact-icon {
+// 	cursor:pointer;
+// 	position:relative;
+// 	width:30px;
+// 	bottom:-15px;
+// 	left:calc(100% - 40px);
+// }
+//
+//
+//
+// /**
+// * Nonatomic Branding
+// */
+// #link{
+// 	font-family: 'Roboto', sans-serif;
+// 	position: fixed;
+// 	bottom: 15px;
+// 	width: 250px;
+// 	left:0;
+// 	text-align: center;
+// 	z-index:9999;
+// }
+//
+// .img-url{
+// 	text-decoration: none;
+// }
+//
+// .url{
+// 	opacity: 0.5;
+// 	text-decoration: none;
+// }
+//
+// // form
+
+
+
+
+$color_white: #fff;
+$color_prime: #5ad67d;
+$color_grey: #e2e2e2;
+$color_grey_dark: #a2a2a2;
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  // margin: 1rem auto;
+  margin-left: -15px;
+  box-shadow: 0 3px 7px -1px rgba(#000, .1);
+  margin-bottom: 1.6%;
+  background: $color_white;
+  line-height: 1.4;
+  font-family: sans-serif;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 0;
+
+  a {
+    color: inherit;
+    &:hover {
+      color: $color_prime;
+    }
+  }
+  &:hover {
+    .photo {
+      transform: scale(1.3) rotate(3deg);
+    }
+  }
+  .meta {
+    position: relative;
+    z-index: 0;
+    height: 200px;
+  }
+  .photo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform .2s;
+  }
+  .details,
+  .details ul {
+    margin: auto;
+    padding: 0;
+    list-style: none;
+  }
+
+  .details {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    margin: auto;
+    transition: left .2s;
+    background: rgba(#000, .6);
+    color: $color_white;
+    padding: 10px;
+    width: 100%;
+    font-size: .9rem;
+    a {
+      text-decoration: dotted underline
+    }
+    ul li {
+      display: inline-block;
+    }
+    .author:before {
+      font-family: FontAwesome;
+      margin-right: 10px;
+      content: "\f007";
+    }
+
+    .date:before {
+      font-family: FontAwesome;
+      margin-right: 10px;
+      content: "\f133";
+    }
+
+    .tags {
+      ul:before {
+        font-family: FontAwesome;
+        content: "\f02b";
+        margin-right: 10px;
+      }
+      li {
+        margin-right: 2px;
+        &:first-child {
+          margin-left: -4px;
+        }
+      }
+    }
+  }
+  .description {
+    padding: 1rem;
+    background: $color_white;
+    position: relative;
+    z-index: 1;
+    h1,
+    h2 {
+      font-family: Poppins, sans-serif;
+    }
+    h1 {
+      line-height: 1;
+      margin: 0;
+      font-size: 1.7rem;
+    }
+    h2 {
+      font-size: 25px;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: $color_grey_dark;
+      margin-top: 5px;
+    }
+    .read-more {
+      text-align: right;
+      a {
+        color: $color_prime;
+        display: inline-block;
+        position: relative;
+        &:after {
+          content: "\f061";
+          font-family: FontAwesome;
+          margin-left: -10px;
+          opacity: 0;
+          vertical-align: middle;
+          transition: margin .3s, opacity .3s;
+        }
+
+        &:hover:after {
+          margin-left: 5px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  p {
+    position: relative;
+    margin: 1rem 0 0;
+    &:first-of-type {
+      margin-top: 1.25rem;
+      &:before {
+        content: "";
+        position: absolute;
+        height: 5px;
+        background: $color_prime;
+        width: 35px;
+        top: -0.75rem;
+        border-radius: 3px;
+      }
+    }
+  }
+  &:hover {
+    .details {
+      left: 0%;
+    }
+  }
+
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    max-width: 700px;
+    .meta {
+      flex-basis: 40%;
+      height: auto;
+    }
+    .description {
+      flex-basis: 60%;
+      &:before {
+        transform: skewX(-3deg);
+        content: "";
+        background: #fff;
+        width: 30px;
+        position: absolute;
+        left: -10px;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+      }
+    }
+    &.alt {
+      flex-direction: row-reverse;
+      .description {
+        &:before {
+          left: inherit;
+          right: -10px;
+          transform: skew(3deg)
+        }
+      }
+      .details {
+        padding-left: 25px;
+      }
+    }
+  }
+}
+
+
+
+
+//
+// @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+// // Variables
+// $regal-blue: #034378;
+// $san-juan: #2d4e68;
+// $bermuda: #77d7b9;
+// $white: #fff;
+// $black: #000;
+// $open-sans: 'Open Sans',
+// sans-serif;
+// // clear-fix mixin
+// @mixin cf {
+//   &::before,
+//   &::after {
+//     content: '';
+//     display: table;
+//   }
+//   &::after {
+//     clear: both;
+//   }
+// }
+//
+// * {
+//   box-sizing: border-box;
+// }
+//
+//
+//
+// a {
+//   text-decoration: none;
+// }
+//
+// h1 {
+//   font-family: $open-sans;
+//   font-weight: 300;
+// }
+//
+// .row {
+//   max-width: 900px;
+//   margin: 50px auto 0;
+//
+// }
+//
+// // Base styles
+// .card {
+//   margin-top: 10px;
+//   float: left;
+//   padding: 0 1.7rem;
+//   width: 100%;
+//   .menu-content {
+//     @include cf;
+//     margin: 0;
+//
+//     padding: 0;
+//     list-style-type: none;
+//     li {
+//       display: inline-block;
+//     }
+//     a {
+//       color: $white;
+//     }
+//     span {
+//       position: absolute;
+//       left: 50%;
+//       top: 0;
+//       font-size: 10px;
+//       font-weight: 700;
+//       font-family: 'Open Sans';
+//       transform: translate(-50%, 0);
+//     }
+//   }
+//   .wrapper {
+//     background-color: $white;
+//     min-height: 540px;
+//     position: relative;
+//     overflow: hidden;
+//     box-shadow: 0 19px 38px rgba($black, 0.3), 0 15px 12px rgba($black, 0.2);
+//     &:hover {
+//       .data {
+//         transform: translateY(0);
+//       }
+//     }
+//   }
+//   .data {
+//     position: absolute;
+//     bottom: 0;
+//     width: 100%;
+//     transform: translateY(calc(70px + 1em));
+//     transition: transform 0.3s;
+//     .content {
+//       padding: 1em;
+//       position: relative;
+//       z-index: 1;
+//     }
+//   }
+//   .author {
+//     font-size: 12px;
+//   }
+//   .title {
+//     margin-top: 10px;
+//   }
+//   .text {
+//     height: 70px;
+//     margin: 0;
+//   }
+//   input[type='checkbox'] {
+//     display: none;
+//   }
+//   input[type='checkbox']:checked + .menu-content {
+//     transform: translateY(-60px);
+//   }
+// }
+//
+// // First example styles
+// .example-1 {
+//   .wrapper {
+//     background: url(https://www.si.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTcwMzExMzEwNTc0MTAxODM5/lebron-dunk.jpg) 20% 1% / cover no-repeat;
+//   }
+//   .date {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     background-color: $bermuda;
+//     color: $white;
+//     padding: 0.8em;
+//     span {
+//       display: block;
+//       text-align: center;
+//     }
+//     .day {
+//       font-weight: 700;
+//       font-size: 24px;
+//       text-shadow: 2px 3px 2px rgba($black, 0.18);
+//     }
+//     .month {
+//       text-transform: uppercase;
+//     }
+//     .month,
+//     .year {
+//       font-size: 12px;
+//     }
+//   }
+//   .content {
+//     background-color: $white;
+//     box-shadow: 0 5px 30px 10px rgba($black, 0.3);
+//   }
+//   .title {
+//     a {
+//       color: lighten($black, 50%);
+//     }
+//   }
+//   .menu-button {
+//     position: absolute;
+//     z-index: 999;
+//     top: 16px;
+//     right: 16px;
+//     width: 25px;
+//     text-align: center;
+//     cursor: pointer;
+//     span {
+//       width: 5px;
+//       height: 5px;
+//       background-color: lighten($black, 50%);
+//       color: lighten($black, 50%);
+//       position: relative;
+//       display: inline-block;
+//       border-radius: 50%;
+//       &::after,
+//       &::before {
+//         content: '';
+//         display: block;
+//         width: 5px;
+//         height: 5px;
+//         background-color: currentColor;
+//         position: absolute;
+//         border-radius: 50%;
+//       }
+//       &::before {
+//         left: -10px;
+//       }
+//       &::after {
+//         right: -10px;
+//       }
+//     }
+//   }
+//   .menu-content {
+//     text-align: center;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     z-index: -1;
+//     transition: transform 0.3s;
+//     transform: translateY(0);
+//     li {
+//       width: 33.333333%;
+//       float: left;
+//       background-color: $bermuda;
+//       height: 60px;
+//       position: relative;
+//     }
+//     a {
+//       position: absolute;
+//       top: 50%;
+//       left: 50%;
+//       transform: translate(-50%, -50%);
+//       font-size: 24px;
+//     }
+//     span {
+//       top: -10px;
+//     }
+//   }
+// }
+
+// // Second example styles
+// .example-2 {
+//   .wrapper {
+//     background: url(https://tvseriescritic.files.wordpress.com/2016/10/stranger-things-bicycle-lights-children.jpg) center / cover no-repeat;
+//     &:hover {
+//       .menu-content {
+//         span {
+//           transform: translate(-50%, -10px);
+//           opacity: 1;
+//         }
+//       }
+//     }
+//   }
+//   .header {
+//     @include cf;
+//     color: $white;
+//     padding: 1em;
+//     .date {
+//       float: left;
+//       font-size: 12px;
+//     }
+//   }
+//   .menu-content {
+//     float: right;
+//     li {
+//       margin: 0 5px;
+//       position: relative;
+//     }
+//     span {
+//       transition: all 0.3s;
+//       opacity: 0;
+//     }
+//   }
+//   .data {
+//     color: $white;
+//     transform: translateY(calc(70px + 4em));
+//   }
+//   .title {
+//     a {
+//       color: $white;
+//     }
+//   }
+//   .button {
+//     display: block;
+//     width: 100px;
+//     margin: 2em auto 1em;
+//     text-align: center;
+//     font-size: 12px;
+//     color: $white;
+//     line-height: 1;
+//     position: relative;
+//     font-weight: 700;
+//     &::after {
+//       content: '\2192';
+//       opacity: 0;
+//       position: absolute;
+//       right: 0;
+//       top: 50%;
+//       transform: translate(0, -50%);
+//       transition: all 0.3s;
+//     }
+//     &:hover {
+//       &::after {
+//         transform: translate(5px, -50%);
+//         opacity: 1;
+//       }
+//     }
+//   }
+// }

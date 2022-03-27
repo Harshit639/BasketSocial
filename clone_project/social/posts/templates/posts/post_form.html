@@ -1,0 +1,12 @@
+{% extends "posts/post_base.html" %}
+{% load bootstrap4 %}
+{% block post_content %}
+{% load crispy_forms_tags %}
+<h4>Create a new post</h4>
+<form id='postform' action="{% url 'posts:create' %}" method="post">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  <input type="submit" name="" value="Post" class="btn btn-primary btn-large">
+
+</form>
+{% endblock %}

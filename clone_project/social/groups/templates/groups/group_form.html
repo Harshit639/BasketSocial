@@ -1,0 +1,12 @@
+{% extends 'groups/group_base.html' %}
+{% load bootstrap4 %}
+{% load crispy_forms_tags %}
+{% block group_content %}
+<h4>Create New Group</h4>
+<form class="contact-form horline vertline form-background " action="{% url 'groups:create' %}" method="post">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  <input type="submit" class="btn btn-primary btn-large" value="Create">
+
+</form>
+{% endblock %}
