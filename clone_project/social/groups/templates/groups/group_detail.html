@@ -4,14 +4,24 @@
 <h1>{{group.name}}</h1>
 <h3>Members: {{group.members.count}}</h3>
 <div class="class="list-group-item" ">
+  <br>
 
 <div class="container">
   {% if user in group.members.all %}
-  <a href="{% url 'groups:leave' slug=group.slug %}" class='xer btn btn-md btn-fill btn-warning'><span class='glyphicon glyphicon-remove-circle'></span>Leave</a>
+  <a href="{%url 'posts:create' %}"><button type="button" class='pulse' name="button">POST</button></a>
+    <a href="{% url 'groups:leave' slug=group.slug %}"><button type="button" name="button" class='pulse'>LEAVE</button></a>
+  <!-- <a href="{% url 'groups:leave' slug=group.slug %}" class='xer btn btn-md btn-fill btn-warning'><span class='glyphicon glyphicon-remove-circle'></span>Leave</a> -->
   {% else %}
-  <a href="{% url 'groups:join' slug=group.slug %}" class=' xer btn btn-md btn-fill btn-warning'><span class='glyphicon glyphicon-ok-circle'></span>Join</a>
+  <!-- <button type="submit" name="button" href="{% url 'groups:join' slug=group.slug %}">Join</button> -->
+  <div class="buttons">
+
+  <a href="{% url 'groups:join' slug=group.slug %}"><button type="button" name="button" class='pulse'>JOIN</button></a>
+
+<!-- <h2> <a href="{% url 'groups:join' slug=group.slug %}" class='offset '>Join</a></h2> -->
+  </div>
   {% endif %}
 </div>
+<br>
 {% endblock %}
 
 {% block group_content %}

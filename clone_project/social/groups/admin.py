@@ -4,7 +4,7 @@ from . import models
 
 # Register your models here.
 
-class GroupMemberaInline(admin.TabularInline):
+class GroupMemberInline(admin.TabularInline):
     model=models.GroupMember
 
 
