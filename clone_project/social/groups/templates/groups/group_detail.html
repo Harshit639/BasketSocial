@@ -1,8 +1,7 @@
 {% extends 'groups/group_base.html' %}
 {% block pregroup %}
 
-<h1>{{group.name}}</h1>
-<h3>Members: {{group.members.count}}</h3>
+<h1 style="display:inline;">{{group.name}}</h1>
 <div class="class="list-group-item" ">
   <br>
 
@@ -14,9 +13,9 @@
   {% else %}
   <!-- <button type="submit" name="button" href="{% url 'groups:join' slug=group.slug %}">Join</button> -->
   <div class="buttons">
+    <h5  style="display:inline;"><button type="button" name="button" class='offset'>Members: {{group.members.count}}</button></h5>
 
   <a href="{% url 'groups:join' slug=group.slug %}"><button type="button" name="button" class='pulse'>JOIN</button></a>
-
 <!-- <h2> <a href="{% url 'groups:join' slug=group.slug %}" class='offset '>Join</a></h2> -->
   </div>
   {% endif %}
@@ -31,7 +30,7 @@
   {% else %}
   {% for post in group.posts.all %}
    {% include "posts/_post.html" %}
-   <p>------------------------------------------------------------------------------------------------</p>
+   <!-- <p>------------------------------------------------------------------------------------------------</p> -->
    {% endfor %}
   {% endif %}
 </div>

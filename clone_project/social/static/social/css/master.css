@@ -217,11 +217,11 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
   margin-left: 200px;
 }
 .tb{
-  margin-top: 150px;
+  margin-top: 140px;
   margin-left: 200px;
 }
 .tc{
-  margin-top: 160px;
+  margin-top: 110px;
   margin-left: 200px;
 }
 
@@ -245,8 +245,9 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 
 
 .x{
-  margin-left: 300px;
-  margin-top: 100px;
+  margin-left: 230px;
+  margin-top: 80px;
+
 }
 
 .vc{
@@ -274,13 +275,19 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 }
 #t{
   margin-top: 100px;
-  margin-left: 540px;
+  margin-left: 560px;
 
+
+}
+
+#gf{
+  margin-left: 400px;
+  margin-top: 100px;
 
 }
 .about{
   padding-bottom: 50px;
-  margin-left: 600px;
+  margin-left: 620px;
 }
 
 #con{
@@ -289,4 +296,34 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 
 #pur{
   color: yellow;
+}
+.diva{
+    border: 1px solid black;
+    width: 70px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#bc{
+  font-size: 20px;
+}
+.lk{
+  display: inline;
+  overflow: hidden;
+  /* color: blue; */
+}
+
+#lj{
+  font-size: 12px;
+  color: #787878;
+}
+
+#textthread{
+  border: 2px solid #88598b;
+  border-radius: 10px;
+  padding: 4px;
+  background-color: #D16587;
+  display: inline-block;
+}
+#members{
+  margin-left: 400px;
 }
