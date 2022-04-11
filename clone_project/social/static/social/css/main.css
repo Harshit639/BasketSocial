@@ -211,7 +211,7 @@ code {
     transform: translateY(-60px); }
 
 .example-1 .wrapper {
-  background: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.usatoday.com%2Fpicture-gallery%2Fsports%2Fnba%2F2016%2F12%2F15%2Flebron-james-through-the-years%2F95385300%2F&psig=AOvVaw0XVUL4oNeYxHDxnAQ_7PNs&ust=1649512074255000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCODJ8LvNhPcCFQAAAAAdAAAAABAO) 20% 1%/cover no-repeat; }
+  background: url(https://i.guim.co.uk/img/media/e52b8c7707b23012618809da99f13d4331c3e43e/0_41_4000_2402/master/4000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=f3b485a7e8f52eb6972c6c89bca73480) 20% 100%/cover no-repeat; }
 
 .example-1 .date {
   position: absolute;
@@ -397,6 +397,7 @@ code {
           margin-left: 5px;
           opacity: 1; }
   .blog-card p {
+    color: #b3b3b3;
     position: relative;
     margin: 1rem 0 0; }
     .blog-card p:first-of-type {

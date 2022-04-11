@@ -213,15 +213,15 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 
 /* neon buttons */
 .ta{
-  margin-top: 70px;
+  margin-top: 20px;
   margin-left: 200px;
 }
 .tb{
-  margin-top: 140px;
+  margin-top: 80px;
   margin-left: 200px;
 }
 .tc{
-  margin-top: 110px;
+  margin-top: 50px;
   margin-left: 200px;
 }
 
@@ -329,4 +329,14 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 }
 
 
+
+#ol{
+  color: lighten($black, 50%);
+}
+
+
+
+.matter{
+  margin-top: 70px;
+}
 /* about me page */
