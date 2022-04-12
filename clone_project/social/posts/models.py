@@ -29,4 +29,16 @@ class Post(models.Model):
 
     class Meta:
         ordering=['-created_at']
-        
+
+class comment(models.Model):
+    post=models.ForeignKey('posts.Post',related_name='comments',on_delete=models.CASCADE)
+    author=models.CharField(max_length=200)
+    text=models.TextField()
+    published_date=models.DateTimeField(auto_now=True)
+
+    def get_absolute_url(self):
+        return reverse('group_detail')
+
+    # def publish(self):
+    #     self.published_date=timezone.now()
+    #     self.save();

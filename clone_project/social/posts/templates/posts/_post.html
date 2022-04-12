@@ -1,10 +1,29 @@
-<div class="post media">
-<div class="lk">
+<div class="postmedia">
   <!-- <h3></strong><span ><time class='time'></time></span></h3> -->
+<div class="asx">
 
-  <h3 style="display:inline;">{{post.user.username}}</h3> <h9 id='lj' style="display:inline;">{{ post.created_at }}</h9>
+  <div class="lk">
+    <style type="text/css">
+    .fa_custom {
+    color: pink;
+    padding-left: 20px;
+    }
+    </style>
+  <h3 style="display:inline;">{{post.user.username}}</h3> <h9 id='lj' style="display:inline;">{{ post.created_at }}</h9><a href="{% url 'posts:add_comment_to_post' username=post.user.username pk=post.pk %}"><i class="fa fa-comment fa_custom fa-2x" style="display:inline;"></i></a>
 </div>
   <h4><span id='textthread' >{{post.message}}</h4>
+    {% if user.is_authenticated %}
+    <!-- <a class='btn btn-primary btn-comment' href="">Add Comment</a> -->
+
+    {% endif %}
+<div class="container">
+    {% for comment in post.comments.all %}
+    <br>
+    <h4 style="display:inline;">{{comment.author}}</h4> <p id='lj' style="display:inline; , padding-left:5px;">{{comment.published_date.date}}</p>
+    <p id='lj' >replying to @{{post.user.username}}</p>
+      <p id='textthread'>{{comment.text}}</p>
+    {% endfor %}
+</div>
     <!-- <h1><span style='border:2px black solid; font-size:42px;'>{{post.message|safe}}</span></h1> -->
   <div class="media-body">
 
@@ -22,4 +41,6 @@
       {% endif %}
      </div>
   </div>
+</div>
+<br>
 </div>
