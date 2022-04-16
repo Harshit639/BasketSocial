@@ -1,16 +1,16 @@
 from django.shortcuts import render,get_object_or_404,redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.urls import reverse_lazy
-from django.http import Http404
+from django.urls import reverse_lazy,reverse
+from django.http import Http404,HttpResponseRedirect
 from django.views import generic
 from braces.views import SelectRelatedMixin
-
+from django.core.exceptions import ObjectDoesNotExist
 from . import models
 from . import forms
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from posts.forms import PostForm,CommentForm
-from posts.models import Post
+from posts.models import Post,comment,Like,DisLike
 User=get_user_model()
 # Create your views here.
 
@@ -87,7 +87,56 @@ def add_comment_to_post(request,pk,username):
             comment=form.save(commit=False)
             comment.post=post
             comment.save()
-            return redirect('groups:all')
+            return redirect('groups:single', slug=post.group.slug)
+            # return redirect('groups:all')
     else:
         form=CommentForm()
     return render(request,'posts/comment_form.html',{'form':form})
+
+
+
+
+class UpdateCommentVote(LoginRequiredMixin,SelectRelatedMixin, generic.View):
+
+
+    redirect_field_name = 'next'
+
+    def get(self, request, *args, **kwargs):
+
+        comment_id = self.kwargs.get('comment_id', None)
+        opition = self.kwargs.get('opition', None) # like or dislike button clicked
+
+        comment = get_object_or_404(Post, id=comment_id)
+
+        try:
+            # If child DisLike model doesnot exit then create
+            comment.dis_likes
+        except Post.dis_likes.RelatedObjectDoesNotExist as identifier:
+            DisLike.objects.create(coment = comment)
+
+        try:
+            # If child Like model doesnot exit then create
+            comment.likes
+        except Post.likes.RelatedObjectDoesNotExist as identifier:
+            Like.objects.create(coment = comment)
+
+        if opition.lower() == 'like':
+
+            if request.user in comment.likes.users.all():
+                comment.likes.users.remove(request.user)
+            else:
+                comment.likes.users.add(request.user)
+                comment.dis_likes.users.remove(request.user)
+
+        elif opition.lower() == 'dis_like':
+
+            if request.user in comment.dis_likes.users.all():
+                comment.dis_likes.users.remove(request.user)
+            else:
+                comment.dis_likes.users.add(request.user)
+                comment.likes.users.remove(request.user)
+        else:
+            return redirect('groups:single', slug=comment.group.slug)
+        return redirect('groups:single', slug=comment.group.slug)
+        #     return HttpResponseRedirect(reverse(''))
+        # return HttpResponseRedirect(reverse('comment'))

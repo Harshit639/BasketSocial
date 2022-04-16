@@ -211,7 +211,7 @@ code {
     transform: translateY(-60px); }
 
 .example-1 .wrapper {
-  background: url(https://i.guim.co.uk/img/media/e52b8c7707b23012618809da99f13d4331c3e43e/0_41_4000_2402/master/4000.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=f3b485a7e8f52eb6972c6c89bca73480) 20% 100%/cover no-repeat; }
+  background: url(https://static.onecms.io/wp-content/uploads/sites/20/2021/02/02/lebron-james-2.jpg) -20% 10%/cover no-repeat; }
 
 .example-1 .date {
   position: absolute;
@@ -238,6 +238,9 @@ code {
   box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.3); }
 
 .example-1 .title a {
+  color: gray; }
+
+.example-1 .text {
   color: gray; }
 
 .example-1 .menu-button {

@@ -297,6 +297,9 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 #pur{
   color: yellow;
 }
+#puran{
+  color: white;
+}
 .diva{
     border: 1px solid black;
     width: 70px;
@@ -343,6 +346,56 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 
 
 .asx{
-  border: 3px solid pink;
+  border: 3px solid #AA336A;
   padding: 20px;
+}
+
+
+
+#commentthread{
+  border: 2px solid #88598b;
+  border-radius: 10px;
+  padding: 4px;
+  background-color: #FF7F50	;
+  display: inline-block;
+}
+/*
+.like{
+  font-size:24px;
+} */
+
+
+
+.cdp{
+  margin-left: 50px;
+}
+
+
+.lo{
+  position: relative;
+  display: inline-block;
+  padding: 25px 30px;
+
+
+  color: #03e9f4;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  overflow: hidden;
+  padding-bottom: 60px;
+  margin-left: 300px;
+  background: #03e9f4;
+  color: #050801;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 200px #03e9f4;
+   -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+
+
+}
+
+#pura{
+  color: yellow;
 }

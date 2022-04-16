@@ -6,7 +6,7 @@
 <form class="contact-form horline vertline form-background " action="{% url 'groups:create' %}" method="post">
   {% csrf_token %}
   {% bootstrap_form form %}
-  <input type="submit" class="btn btn-primary btn-large" value="Create">
+  <input type="submit" class="bubbly-button" value="Create">
 
 </form>
 {% endblock %}

@@ -8,6 +8,8 @@
 {% block post_content %}
 <div class="col-md-8">
   {% for post in post_list %}
+  <h2>{{post.group.name}}</h2>
+  <br>
   {% include "posts/_post.html" %}
   {% endfor %}
 </div>

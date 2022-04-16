@@ -9,5 +9,6 @@ urlpatterns=[
              path('by/<username>/<pk>',views.PostDetail.as_view(),name='single'),
              path('by/<username>/<pk>/comment',views.add_comment_to_post,name='add_comment_to_post'),
              path('delete/<pk>',views.DeletePost.as_view(),name='delete'),
+             path('requirement/<int:comment_id>/<str:opition>',views.UpdateCommentVote.as_view(), name='requirement_comment_vote'),
 
 ]

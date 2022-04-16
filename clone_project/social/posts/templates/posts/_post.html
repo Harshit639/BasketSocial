@@ -9,19 +9,62 @@
     padding-left: 20px;
     }
     </style>
-  <h3 style="display:inline;">{{post.user.username}}</h3> <h9 id='lj' style="display:inline;">{{ post.created_at }}</h9><a href="{% url 'posts:add_comment_to_post' username=post.user.username pk=post.pk %}"><i class="fa fa-comment fa_custom fa-2x" style="display:inline;"></i></a>
-</div>
+
+
+
+  <a  id='puran' href="{% url 'posts:for_user' username=post.user.username %}"><h3 style="display:inline; ">{{post.user.username}}</h3></a> <h9 id='lj' style="display:inline;">{{ post.created_at }}</h9><a href="{% url 'posts:add_comment_to_post' username=post.user.username pk=post.pk %}"><i class="fa fa-comment fa_custom fa-2x" style="display:inline;"></i></a>{% if user.is_authenticated and post.user == user %}
+  <a href="{% url 'posts:delete' pk=post.pk %}"><i class="fa fa-trash-o" style="font-size:24px;color:red;display:inline;padding-left:10px;"></i></a>{% endif %}
+  </div>
   <h4><span id='textthread' >{{post.message}}</h4>
+    <!-- <i class="fa fa-trash-o" style="font-size:48px;color:red"></i> -->
     {% if user.is_authenticated %}
     <!-- <a class='btn btn-primary btn-comment' href="">Add Comment</a> -->
 
     {% endif %}
-<div class="container">
+    <div class="text-left">
+         <span class="pointer">
+            {% if request.user in page_obj.likes.users.all%}
+            <!-- already liked-->
+            <a href={% url 'posts:requirement_comment_vote' comment_id=post.pk opition='like' %}> <i
+               data-toggle="tooltip" data-placement="bottom" title="Unlike"
+               class="like fas fa-thumbs-up pr-2">
+            <span>{{post.get_total_likes}}</span>
+            </i>
+            </a>
+            {% else %}
+            <!--not liked-->
+            <a href={% url 'posts:requirement_comment_vote' comment_id=post.pk opition='like' %}><i
+               data-toggle="tooltip" data-placement="bottom" title="Like"
+               class="default-icon fas fa-thumbs-up pr-2" style="font-size:24px; color:#ffde34;">
+            <span>{% if post.get_total_likes  %}{{post.get_total_likes}} {% else %} 0
+            {% endif %}</span></i>
+            </a>
+            {% endif %}
+         </span>
+         <span class="ml-3 pointer">
+         {% if request.user in post.dis_likes.users.all %}
+         <a href={% url 'posts:requirement_comment_vote' comment_id=post.pk opition='dis_like' %}><i
+            data-toggle="tooltip" data-placement="bottom" title="i dislike this"
+            class="dislike fas fa-thumbs-down pr-2" style="font-size:24px; color:#ffde34;">
+         <span>{{post.get_total_dis_likes}}</span></i>
+         </a>
+         {% else %}
+         <a href={% url 'posts:requirement_comment_vote' comment_id=post.pk opition='dis_like' %}><i
+            data-toggle="tooltip" data-placement="bottom" title="i dislike this "
+            class="default-icon fas fa-thumbs-down pr-2" style="font-size:24px; color:#ffde34;">
+         <span>{% if  post.get_total_dis_likes %}{{post.get_total_dis_likes}}
+         {% else %} 0 {% endif %}</span></i>
+         </a>
+         {% endif %}
+         </span>
+      </div>
+
+<div class="cdp container">
     {% for comment in post.comments.all %}
     <br>
     <h4 style="display:inline;">{{comment.author}}</h4> <p id='lj' style="display:inline; , padding-left:5px;">{{comment.published_date.date}}</p>
     <p id='lj' >replying to @{{post.user.username}}</p>
-      <p id='textthread'>{{comment.text}}</p>
+      <p id='commentthread'>{{comment.text}}</p>
     {% endfor %}
 </div>
     <!-- <h1><span style='border:2px black solid; font-size:42px;'>{{post.message|safe}}</span></h1> -->
@@ -35,10 +78,10 @@
 		{% endif %} -->
   </h5>
      <div class="media-footer">
-       {% if user.is_authenticated and post.user == user %}
+       <!-- {% if user.is_authenticated and post.user == user %}
        <a href="{% url 'posts:delete' pk=post.pk %}"><button type="button" name="button" class='pulse'>Delete</button></a>
        <!-- <a href="{% url 'posts:delete' pk=post.pk %}" class='btn btn-simple'><span class='glyphicon glyphicon-remove text-danger'></span><span class='text-danger icon-label'>Delete</span></a> -->
-      {% endif %}
+      <!-- {% endif %} -->
      </div>
   </div>
 </div>

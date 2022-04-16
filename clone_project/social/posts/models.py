@@ -16,6 +16,13 @@ class Post(models.Model):
     message_html=models.TextField(editable=False)
     group=models.ForeignKey(Group,related_name='posts',null=True,blank=True,on_delete=models.CASCADE)
 
+    def get_total_likes(self):
+        return self.likes.users.count()
+
+    def get_total_dis_likes(self):
+        return self.dis_likes.users.count()
+
+
 
     def __str__(self):
         return self.message
@@ -42,3 +49,17 @@ class comment(models.Model):
     # def publish(self):
     #     self.published_date=timezone.now()
     #     self.save();
+
+
+class Like(models.Model):
+    coment = models.OneToOneField(Post, related_name="likes", on_delete=models.CASCADE)
+    users = models.ManyToManyField(User, related_name='requirement_comment_likes')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+
+class DisLike(models.Model):
+    coment = models.OneToOneField(Post, related_name="dis_likes", on_delete=models.CASCADE)
+    users = models.ManyToManyField(User, related_name='requirement_comment_dis_likes')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

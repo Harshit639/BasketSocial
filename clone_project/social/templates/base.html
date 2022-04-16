@@ -7,7 +7,7 @@
     <title>Basket Social</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
@@ -35,11 +35,11 @@
        <ul class='nav navbar-nav navbar-right'>
          {% if user.is_authenticated %}
          <li><a class='er' href="{%url 'posts:create' %}">Post</a></li>
-         <li><a class='er' href="{%url 'groups:all' %}">Groups</a></li>
-         <li><a class='er' href="{%url 'groups:create' %}">Create Group</a></li>
+         <li><a class='er' href="{%url 'groups:all' %}">Matches</a></li>
+         <!-- <li><a class='er' href="{%url 'groups:create' %}">Create Group</a></li> -->
          <li><a class='er' href="{% url 'accounts:logout' %}">Log Out</a></li>
          {% else %}
-         <li><a class='er' href="{%url 'groups:all' %}">Groups</a></li>
+         <li><a class='er' href="{%url 'groups:all' %}">Matches</a></li>
          <li><a class='er' href="{% url 'accounts:login' %}">login</a></li>
          <li><a class='er' href="{% url 'accounts:signup' %}">SignUp</a></li>
          {% endif %}

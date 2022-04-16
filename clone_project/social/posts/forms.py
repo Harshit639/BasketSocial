@@ -10,7 +10,7 @@ class PostForm(forms.ModelForm):
         model=Post
         fields=('message','group',)
 
-        widgets={ 'message': forms.Textarea(attrs={'class': 'form-control editable medium-editor-textarea postcontent','style': 'background-color:rgba(0, 0, 0, 0); color:white;'})}
+        widgets={ 'message': forms.Textarea(attrs={'class': 'form-control editable medium-editor-textarea postcontent','style': 'background-color:rgba(0, 0, 0, 0); color:white;'}), 'group': forms.Select(attrs={'class': 'form-control editable medium-editor-textarea postcontent','style': 'background-color:rgba(0, 0, 0, 0); color:white; '})}
 
 
 class CommentForm(forms.ModelForm):
@@ -19,4 +19,4 @@ class CommentForm(forms.ModelForm):
         model=comment
         fields=('author', 'text',)
 
-    widgets={ 'author':forms.TextInput(attrs={'class': 'textinputclass'}),'text': forms.Textarea(attrs={'class': 'editable medium-editor-textarea'})}
+    widgets={ 'author':forms.TextInput(attrs={'class': 'textinputclass','style': 'background-color:rgba(0, 0, 0, 0); color:white;'}),'text': forms.Textarea(attrs={'class': 'editable medium-editor-textarea','style': 'background-color:rgba(0, 0, 0, 0); color:white;'})}
