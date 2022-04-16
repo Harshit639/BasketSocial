@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     'groups',
     'posts',
+    'feedback',
     'sass_processor',
     'crispy_forms',
     'bootstrap4',

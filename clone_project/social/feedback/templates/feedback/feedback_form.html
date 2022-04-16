@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container">
+
+
+<h2>Contact Us</h2>
+<br>
+<form id='postform' action="{% url 'feedback:f' %}" method="post">
+  {% csrf_token %}
+  {% bootstrap_form form %}
+  <input type="submit" name="" value="Submit" class="bubbly-button btn-large">
+
+</form>
+</div>
+<canvas id="canvas"></canvas>
+{% endblock %}
