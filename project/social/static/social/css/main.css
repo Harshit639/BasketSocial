@@ -211,7 +211,7 @@ code {
     transform: translateY(-60px); }
 
 .example-1 .wrapper {
-  background: url(https://static.onecms.io/wp-content/uploads/sites/20/2021/02/02/lebron-james-2.jpg) -20% 10%/cover no-repeat; }
+  background: url(https://static.onecms.io/wp-content/uploads/sites/20/2021/02/02/lebron-james-2.jpg) -20% 20%/cover no-repeat; }
 
 .example-1 .date {
   position: absolute;
@@ -295,6 +295,10 @@ code {
     font-size: 24px; }
   .example-1 .menu-content span {
     top: -10px; }
+
+@media (max-width: 900px) {
+  .example-1 .wrapper {
+    background: url(https://static.onecms.io/wp-content/uploads/sites/20/2021/02/02/lebron-james-2.jpg) 0% 20%/cover no-repeat; } }
 
 /*PEN STYLES*/
 .blog-card {

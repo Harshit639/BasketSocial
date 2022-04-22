@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container mycontent">
+<div class="container ">
 
 
     <h1>Welcome to Basket Social!</h1>
@@ -16,8 +16,8 @@
           </a></h4>
 
 
-<!-- <div class="row"> -->
-<div class="qwerty col-lg-6">
+
+<div class="qwerty col-lg-6 col-xs-11 boxy">
 
 
       <div class="blog-card ca">
@@ -75,7 +75,7 @@
 </div>
 </div>
 </div>
-<div class="qwerty col-lg-6">
+<div class="qwerty col-lg-6 col-xs-1 boxy">
 <a href="#" class="er ta">
         <span></span>
         <span></span>
@@ -134,7 +134,7 @@
 <a href="#" class='lo  x'>
 
 
-  <h1>PLAYER OF THE WEEK</h1>
+  <h1 id='poi'>PLAYER OF THE WEEK</h1>
 </a>
 <div class="row">
   <div id='rt' class="example-1 card ">
@@ -171,6 +171,9 @@
       <h1 id='gf'><em>"LOVE FOR THE GAME OF BASKETBALL"</em></h1>
          <h1 id='t'>BASKET SOCIAL ©</h1>
          <div class="about">
+
+
+
 
          <a href="{% url 'about' %}">About Us</a>
          <a id='con'href="{% url 'feedback:f' %}">Contact Us</a>

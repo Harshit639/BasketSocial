@@ -333,7 +333,7 @@ sans-serif;
 // First example styles
 .example-1 {
   .wrapper {
-    background: url(https://static.onecms.io/wp-content/uploads/sites/20/2021/02/02/lebron-james-2.jpg) -20% 10% / cover no-repeat;
+    background: url(https://static.onecms.io/wp-content/uploads/sites/20/2021/02/02/lebron-james-2.jpg) -20% 20% / cover no-repeat;
   }
   .date {
     position: absolute;
@@ -432,7 +432,16 @@ sans-serif;
       top: -10px;
     }
   }
+  @media (max-width: 900px){
+      .wrapper {
+        background: url(https://static.onecms.io/wp-content/uploads/sites/20/2021/02/02/lebron-james-2.jpg) 0% 20% / cover no-repeat;
+      }
+  }
 }
+
+
+
+
 /*PEN STYLES*/
 
 // * {

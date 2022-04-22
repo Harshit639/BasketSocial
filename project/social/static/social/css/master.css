@@ -274,15 +274,14 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 
 }
 #t{
-  margin-top: 100px;
+  margin-top: 1em;
   margin-left: 560px;
 
 
 }
 
 #gf{
-  margin-left: 400px;
-  margin-top: 100px;
+  text-align: center;
 
 }
 .about{
@@ -398,4 +397,35 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 
 #pura{
   color: yellow;
+}
+
+@media (max-width: 900px){
+  body{
+    color: white;
+
+    overflow-x: hidden;
+  }
+  .x{
+    margin-left: 20px;
+
+  }
+  .about{
+    margin-left: 130px;
+  }
+  #t{
+    font-size: 20px;
+    margin-left: 125px;
+  }
+  #rt{
+    margin-left: 10px;
+    width: 350px;
+  }
+  .qwerty{
+    padding-bottom: 20px;
+  }
+  #poi{
+    font-size: 20px;
+  }
+
+
 }
